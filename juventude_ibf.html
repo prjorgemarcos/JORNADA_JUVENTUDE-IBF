@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juventude IBF — Pescando uma Nova Geração para Cristo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --turquesa: #3AACB8;
+    --turquesa-escuro: #2A8A94;
+    --turquesa-claro: #E8F7F9;
+    --navy: #1C2B3A;
+    --amarelo: #F5C842;
+    --off-white: #F5F0E8;
+    --cinza: #6B7280;
+    --branco: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(58,172,184,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(245,200,66,0.08) 0%, transparent 50%);
+  }
+
+  .fish-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='40' viewBox='0 0 60 40'%3E%3Cpath d='M10 20 Q20 10 30 20 Q20 30 10 20Z M30 20 L38 15 L38 25Z' fill='%233AACB8'/%3E%3C/svg%3E");
+    background-size: 60px 40px;
+  }
+
+  .hero-logo {
+    position: relative;
+    margin-bottom: 32px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .hero-logo svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 5.5rem);
+    font-weight: 900;
+    color: var(--turquesa);
+    line-height: 1;
+    letter-spacing: -2px;
+    position: relative;
+    animation: fadeDown 0.9s ease 0.1s both;
+  }
+
+  .hero h1 span {
+    color: var(--off-white);
+    display: block;
+    font-size: clamp(1.1rem, 3vw, 1.6rem);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .hero-tagline {
+    margin-top: 24px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(245,240,232,0.7);
+    max-width: 520px;
+    line-height: 1.7;
+    animation: fadeUp 1s ease 0.3s both;
+    position: relative;
+  }
+
+  .hero-verse {
+    margin-top: 40px;
+    background: rgba(58,172,184,0.12);
+    border-left: 3px solid var(--turquesa);
+    padding: 20px 28px;
+    border-radius: 0 12px 12px 0;
+    max-width: 520px;
+    text-align: left;
+    animation: fadeUp 1s ease 0.5s both;
+    position: relative;
+  }
+
+  .hero-verse p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--off-white);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .hero-verse cite {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--turquesa);
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .scroll-indicator {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeUp 1s ease 0.8s both;
+    cursor: pointer;
+  }
+
+  .scroll-indicator span {
+    font-size: 0.75rem;
+    color: rgba(245,240,232,0.5);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .scroll-dot {
+    width: 6px; height: 6px;
+    background: var(--turquesa);
+    border-radius: 50%;
+    animation: bounce 1.4s ease infinite;
+  }
+  .scroll-dot:nth-child(3) { animation-delay: 0.2s; }
+  .scroll-dot:nth-child(4) { animation-delay: 0.4s; }
+
+  /* ── SECTION BASE ── */
+  section { padding: 100px 24px; }
+  .container { max-width: 1080px; margin: 0 auto; }
+
+  .section-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--turquesa);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .section-desc {
+    font-size: 1.05rem;
+    color: var(--cinza);
+    line-height: 1.8;
+    max-width: 620px;
+  }
+
+  /* ── QUEM SOMOS ── */
+  .quem-somos {
+    background: var(--branco);
+  }
+
+  .quem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .quem-visual {
+    position: relative;
+  }
+
+  .quem-card-main {
+    background: var(--navy);
+    border-radius: 24px;
+    padding: 48px 40px;
+    color: var(--off-white);
+  }
+
+  .quem-card-main h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--turquesa);
+    margin-bottom: 16px;
+  }
+
+  .quem-card-main p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: rgba(245,240,232,0.8);
+  }
+
+  .quem-badge {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    background: var(--amarelo);
+    border-radius: 16px;
+    padding: 20px 24px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  }
+
+  .quem-badge small {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 4px;
+    opacity: 0.7;
+  }
+
+  /* ── PILARES ── */
+  .pilares {
+    background: var(--navy);
+  }
+
+  .pilares .section-title { color: var(--off-white); }
+  .pilares .section-desc { color: rgba(245,240,232,0.6); }
+  .pilares .section-label { color: var(--turquesa); }
+
+  .pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+
+  .pilar-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(58,172,184,0.2);
+    border-radius: 20px;
+    padding: 40px 36px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pilar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--turquesa);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .pilar-card:hover::before { transform: scaleX(1); }
+  .pilar-card:hover { background: rgba(58,172,184,0.08); transform: translateY(-4px); }
+
+  .pilar-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: rgba(58,172,184,0.15);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+
+  .pilar-icon {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .pilar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--turquesa);
+    margin-bottom: 12px;
+  }
+
+  .pilar-card p {
+    font-size: 0.95rem;
+    color: rgba(245,240,232,0.65);
+    line-height: 1.75;
+  }
+
+  .pilar-tag {
+    display: inline-block;
+    margin-top: 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--turquesa);
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border: 1px solid rgba(58,172,184,0.3);
+    border-radius: 100px;
+  }
+
+  /* ── JORNADAS ── */
+  .jornadas { background: var(--off-white); }
+
+  .jornada-tabs {
+    display: flex;
+    gap: 12px;
+    margin: 48px 0 60px;
+    background: var(--branco);
+    padding: 8px;
+    border-radius: 16px;
+    width: fit-content;
+  }
+
+  .tab-btn {
+    padding: 14px 32px;
+    border: none;
+    background: transparent;
+    border-radius: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--cinza);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab-btn.active {
+    background: var(--navy);
+    color: var(--branco);
+  }
+
+  .jornada-panel { display: none; }
+  .jornada-panel.active { display: block; }
+
+  .etapas {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .etapas::before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 60px;
+    bottom: 60px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--turquesa), rgba(58,172,184,0.1));
+  }
+
+  .etapa {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 32px;
+    padding: 32px 0;
+    align-items: start;
+    position: relative;
+  }
+
+  .etapa-num {
+    width: 80px;
+    height: 80px;
+    background: var(--navy);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 20px rgba(28,43,58,0.15);
+  }
+
+  .etapa-num span {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--turquesa);
+    line-height: 1;
+  }
+
+  .etapa-num small {
+    font-size: 0.6rem;
+    color: rgba(245,240,232,0.5);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+  }
+
+  .etapa-content {
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 32px 36px;
+    border: 1px solid rgba(28,43,58,0.06);
+    box-shadow: 0 2px 16px rgba(28,43,58,0.04);
+  }
+
+  .etapa-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .etapa-emoji { font-size: 1.8rem; }
+
+  .etapa-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--navy);
+  }
+
+  .etapa-content > p {
+    font-size: 0.95rem;
+    color: var(--cinza);
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .etapa-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .etapa-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  .etapa-item::before {
+    content: '';
+    width: 8px;
+    height: 8px;
+    background: var(--turquesa);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+
+  .etapa-sinal {
+    margin-top: 20px;
+    padding: 14px 18px;
+    background: var(--turquesa-claro);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--turquesa-escuro);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.5;
+  }
+
+  .etapa-sinal strong { font-weight: 600; }
+
+  .etapa-responsavel {
+    margin-top: 14px;
+    font-size: 0.8rem;
+    color: var(--cinza);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .etapa-responsavel::before {
+    content: '';
+    width: 16px;
+    height: 1px;
+    background: var(--cinza);
+    flex-shrink: 0;
+  }
+
+  /* Perfis do discipulado */
+  .perfis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .perfil-card {
+    background: var(--off-white);
+    border-radius: 12px;
+    padding: 20px;
+    border-left: 3px solid var(--turquesa);
+  }
+
+  .perfil-card h4 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .perfil-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .perfil-card ul li {
+    font-size: 0.85rem;
+    color: var(--cinza);
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.4;
+  }
+
+  .perfil-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--turquesa);
+    font-size: 0.8rem;
+  }
+
+  /* ── CONTATO ── */
+  .contato {
+    background: var(--navy);
+    text-align: center;
+  }
+
+  .contato .section-title { color: var(--off-white); }
+  .contato .section-desc {
+    color: rgba(245,240,232,0.6);
+    margin: 0 auto 48px;
+  }
+
+  .contato-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contato-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(58,172,184,0.25);
+    border-radius: 20px;
+    padding: 32px 40px;
+    min-width: 220px;
+    transition: all 0.3s ease;
+  }
+
+  .contato-card:hover {
+    background: rgba(58,172,184,0.1);
+    transform: translateY(-4px);
+  }
+
+  .contato-card .icon { font-size: 2.2rem; margin-bottom: 12px; }
+
+  .contato-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--off-white);
+    margin-bottom: 6px;
+  }
+
+  .contato-card p {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.5);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #111B25;
+    padding: 40px 24px;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 0.85rem;
+    color: rgba(245,240,232,0.3);
+    line-height: 1.8;
+  }
+
+  footer strong { color: var(--turquesa); }
+
+  /* ── ANIMAÇÕES ── */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(6px); opacity: 0.4; }
+  }
+
+  /* ── RESPONSIVO ── */
+  @media (max-width: 768px) {
+    section { padding: 72px 20px; }
+
+    .quem-grid { grid-template-columns: 1fr; gap: 48px; }
+    .quem-badge { position: static; margin-top: 24px; display: inline-block; }
+
+    .pilares-grid { grid-template-columns: 1fr; }
+
+    .jornada-tabs { flex-direction: column; width: 100%; }
+    .tab-btn { text-align: center; }
+
+    .etapas::before { left: 32px; }
+    .etapa { grid-template-columns: 64px 1fr; gap: 20px; }
+    .etapa-num { width: 64px; height: 64px; border-radius: 16px; }
+    .etapa-num span { font-size: 1.3rem; }
+    .etapa-content { padding: 24px; }
+
+    .perfis-grid { grid-template-columns: 1fr; }
+
+    .contato-cards { flex-direction: column; align-items: center; }
+    .contato-card { width: 100%; max-width: 320px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="fish-pattern"></div>
+
+  <div class="hero-logo">
+    <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="34" cy="44" rx="18" ry="11" fill="none" stroke="#3AACB8" stroke-width="3"/>
+      <path d="M52 44 L64 36 L64 52 Z" fill="#3AACB8"/>
+      <circle cx="26" cy="41" r="3" fill="#3AACB8"/>
+      <path d="M34 20 C34 20 28 14 40 12 C36 18 42 20 34 20Z" fill="#F5C842"/>
+    </svg>
+  </div>
+
+  <h1>
+    <span>Juventude IBF</span>
+    JUVENTUDE
+  </h1>
+
+  <p class="hero-tagline">
+    Igreja Batista da Freguesia da Ilha do Governador<br>
+    <strong style="color:var(--turquesa)">Pescando uma nova geração para Cristo</strong>
+  </p>
+
+  <div class="hero-verse">
+    <p>"E disse Jesus: sigam-me, e eu os farei pescadores de homens."</p>
+    <cite>Mateus 4:19</cite>
+  </div>
+
+  <div class="scroll-indicator" onclick="document.getElementById('quem').scrollIntoView()">
+    <span>Conheça mais</span>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ── QUEM SOMOS ── -->
+<section class="quem-somos" id="quem">
+  <div class="container">
+    <p class="section-label">Nossa identidade</p>
+    <h2 class="section-title">Quem somos</h2>
+    <p class="section-desc">
+      A Juventude IBF existe para formar discípulos de Jesus — enraizados na Palavra, comprometidos com a igreja e engajados na missão de Deus.
+    </p>
+
+    <div class="quem-grid">
+      <div>
+        <p style="font-size:1.05rem;line-height:1.85;color:var(--cinza);margin-bottom:24px">
+          Mais do que um grupo de jovens, somos uma comunidade que acredita que a fé é vivida em relacionamento — com Deus, com a igreja e com o bairro onde estamos.
+        </p>
+        <p style="font-size:1.05rem;line-height:1.85;color:var(--cinza);margin-bottom:24px">
+          Ao longo da nossa caminhada, construímos intencionalmente uma juventude que não se reúne apenas para eventos, mas que caminha junta num processo real de formação espiritual.
+        </p>
+        <p style="font-size:1.05rem;line-height:1.85;color:var(--cinza)">
+          Atendemos jovens de <strong style="color:var(--navy)">19 a 35 anos</strong> e adolescentes de <strong style="color:var(--navy)">12 a 18 anos</strong> — com espaços e linguagens adequadas para cada fase da vida.
+        </p>
+      </div>
+
+      <div class="quem-visual">
+        <div class="quem-card-main">
+          <h3>Nossa missão</h3>
+          <p>
+            Formar discípulos de Jesus que permaneçam na igreja e sirvam a Deus por toda a vida — com raízes bíblicas, pertencimento real e propósito claro.
+          </p>
+        </div>
+        <div class="quem-badge">
+          IBF<br>
+          <small>Freguesia da Ilha</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PILARES ── -->
+<section class="pilares" id="pilares">
+  <div class="container">
+    <p class="section-label">Como nos organizamos</p>
+    <h2 class="section-title" style="color:var(--off-white)">Os quatro pilares</h2>
+    <p class="section-desc">
+      Tudo que fazemos está sustentado em quatro pilares inseparáveis. Quando um deles enfraquece, toda a estrutura ministerial é afetada.
+    </p>
+
+    <div class="pilares-grid">
+
+      <div class="pilar-card">
+        <div class="pilar-num">01</div>
+        <div class="pilar-icon">📖</div>
+        <h3>Ensino</h3>
+        <p>
+          Escola Bíblica Dominical, discipulado intencional, mentoria e os Diálogos — conectando a Palavra às questões reais da vida. Projeto Raízes: estudo sistemático de Isaías, Mateus e Apocalipse.
+        </p>
+        <span class="pilar-tag">Nos conecta a Deus</span>
+      </div>
+
+      <div class="pilar-card">
+        <div class="pilar-num">02</div>
+        <div class="pilar-icon">🙏</div>
+        <h3>Devoção</h3>
+        <p>
+          Cultos mensais organizados pelos próprios jovens, adoração, pregação e o Congresso anual. Formamos jovens com vida devocional pessoal, constante e sincera.
+        </p>
+        <span class="pilar-tag">Nos conecta a Deus</span>
+      </div>
+
+      <div class="pilar-card">
+        <div class="pilar-num">03</div>
+        <div class="pilar-icon">🤝</div>
+        <h3>Comunhão</h3>
+        <p>
+          CAFÉ (pequenos grupos em casas), Oxigênio (encontros de descanso e cuidado), grupo NÓS para casais e encontros por afinidade. Pertencimento real, não apenas presença.
+        </p>
+        <span class="pilar-tag">Nos conecta à igreja</span>
+      </div>
+
+      <div class="pilar-card">
+        <div class="pilar-num">04</div>
+        <div class="pilar-icon">🌍</div>
+        <h3>Missão</h3>
+        <p>
+          Tempo de Paz — ações missionárias trimestrais. Casa em Casa — visitas a idosos. Missão local nos ministérios da IBF. A missão é consequência natural do discipulado.
+        </p>
+        <span class="pilar-tag">Nos conecta à Missio Dei</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── JORNADAS ── -->
+<section class="jornadas" id="jornada">
+  <div class="container">
+    <p class="section-label">Seu caminho aqui</p>
+    <h2 class="section-title">A jornada na Juventude IBF</h2>
+    <p class="section-desc">
+      Todo jovem percorre um caminho desde o primeiro contato até servir com propósito. Esse caminho é intencional — ninguém fica perdido aqui.
+    </p>
+
+    <div class="jornada-tabs">
+      <button class="tab-btn active" onclick="showTab('jovens', this)">
+        Jovens (19–35 anos)
+      </button>
+      <button class="tab-btn" onclick="showTab('adolescentes', this)">
+        Adolescentes (12–18 anos)
+      </button>
+    </div>
+
+    <!-- JORNADA JOVENS -->
+    <div class="jornada-panel active" id="tab-jovens">
+      <div class="etapas">
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>01</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">👋</span>
+              <h3>Chegar</h3>
+            </div>
+            <p>O primeiro contato com a Juventude IBF — seja pelas redes sociais, pelo culto geral da igreja ou pelo convite de um amigo.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Você é acolhido intencionalmente — não por acidente</div>
+              <div class="etapa-item">Seu contato é registrado com cuidado</div>
+              <div class="etapa-item">Você recebe uma mensagem de boas-vindas em até 24 horas</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> Você voltou uma segunda vez</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Pilar de Comunhão — Quesia e Daniel</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>02</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">🔗</span>
+              <h3>Conectar</h3>
+            </div>
+            <p>Você começa a criar vínculos reais com a comunidade — não apenas conhecidos de domingo.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Convite para o CAFÉ — pequeno grupo em casa</div>
+              <div class="etapa-item">Participação no Oxigênio — encontro de cuidado e descanso</div>
+              <div class="etapa-item">Contato pessoal de algum líder além dos encontros regulares</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> Você tem pelo menos um vínculo real e sente que pertence</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Pilar de Comunhão — Quesia e Daniel</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>03</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">📚</span>
+              <h3>Discipular</h3>
+            </div>
+            <p>Formação intencional — com dois caminhos diferentes, porque cada pessoa chega num ponto diferente da caminhada.</p>
+            <div class="perfis-grid">
+              <div class="perfil-card">
+                <h4>Novo na fé</h4>
+                <ul>
+                  <li>Fundamentos bíblicos</li>
+                  <li>Inserção na EBD</li>
+                  <li>Mentoria individual</li>
+                  <li>Acompanhamento próximo</li>
+                </ul>
+              </div>
+              <div class="perfil-card">
+                <h4>Maduro, novo na IBF</h4>
+                <ul>
+                  <li>Cultura e visão da Juventude IBF</li>
+                  <li>Inserção nos grupos e dinâmicas</li>
+                  <li>Conexão com líderes de pilar</li>
+                  <li>Identificação de dons</li>
+                </ul>
+              </div>
+            </div>
+            <div class="etapa-sinal" style="margin-top:20px">
+              ✅ <div><strong>Sinal de avanço:</strong> Você tem raízes bíblicas visíveis e se sente parte da IBF</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Pilar de Ensino — Jhonatan, com orientação pastoral</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>04</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">🙌</span>
+              <h3>Servir</h3>
+            </div>
+            <p>Você encontra seu lugar e começa a contribuir ativamente — não por escala, mas por convicção.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Identificação de dons e talentos naturais</div>
+              <div class="etapa-item">Inserção em um dos pilares ou ministérios da IBF</div>
+              <div class="etapa-item">Acompanhamento contínuo do líder de pilar responsável</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> Você serve por convicção, não por obrigação</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Liderança pastoral em conjunto com os líderes de pilar</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- JORNADA ADOLESCENTES -->
+    <div class="jornada-panel" id="tab-adolescentes">
+      <div class="etapas">
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>01</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">👋</span>
+              <h3>Chegar</h3>
+            </div>
+            <p>O primeiro contato do adolescente com A BASE — pela Escola de Música, pela família, por ações missionárias ou convite de amigos.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Acolhimento intencional pela liderança da BASE</div>
+              <div class="etapa-item">Contato dos pais registrado — a família faz parte</div>
+              <div class="etapa-item">Mensagem de boas-vindas para a família em até 24 horas</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> O adolescente voltou uma segunda vez e os pais estão receptivos</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Alex e Belle</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>02</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">🔗</span>
+              <h3>Conectar</h3>
+            </div>
+            <p>O adolescente começa a criar vínculos com a comunidade da BASE e a sentir que pertence.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Tarde de Filme — espaço de convivência e reflexão</div>
+              <div class="etapa-item">Café dos Adolescentes e Festa do Pijama</div>
+              <div class="etapa-item">Integração com o Oxigênio da Juventude quando apropriado</div>
+              <div class="etapa-item">Contato pessoal da liderança além dos encontros regulares</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> O adolescente sente falta quando não vai</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Alex e Belle</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>03</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">📚</span>
+              <h3>Discipular</h3>
+            </div>
+            <p>Formação bíblica intencional através dos dois eixos de ensino da BASE.</p>
+            <div class="perfis-grid">
+              <div class="perfil-card">
+                <h4>Eixo 1 — A Bíblia</h4>
+                <ul>
+                  <li>O que é a Bíblia</li>
+                  <li>Como foi escrita</li>
+                  <li>Como ler e aplicar</li>
+                  <li>A Bíblia e o mundo atual</li>
+                </ul>
+              </div>
+              <div class="perfil-card">
+                <h4>Eixo 2 — Adolescentes Bíblicos</h4>
+                <ul>
+                  <li>Samuel, Davi, Josias</li>
+                  <li>Maria, Daniel, Ester</li>
+                  <li>Fidelidade desde cedo</li>
+                  <li>Idade não limita o chamado</li>
+                </ul>
+              </div>
+            </div>
+            <div class="etapa-sinal" style="margin-top:20px">
+              ✅ <div><strong>Sinal de avanço:</strong> Hábito de leitura bíblica e participação ativa na EBD</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Alex e Belle com suporte de Jhonatan no ensino</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>04</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">🙌</span>
+              <h3>Servir</h3>
+            </div>
+            <p>O adolescente encontra formas de contribuir dentro da BASE e da IBF — a missão como parte natural da caminhada.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">Projeto BASE — Escola de Música como ferramenta missionária</div>
+              <div class="etapa-item">Cantina Missionária e Feira Missionária</div>
+              <div class="etapa-item">Integração em ministérios da IBF — mídia, ornamentação, recepção</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> O adolescente serve por convicção e se enxerga como parte ativa da comunidade</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Alex e Belle com orientação de Lis Ruama em Missões</div>
+          </div>
+        </div>
+
+        <div class="etapa">
+          <div class="etapa-num">
+            <span>05</span>
+            <small>etapa</small>
+          </div>
+          <div class="etapa-content">
+            <div class="etapa-header">
+              <span class="etapa-emoji">🚀</span>
+              <h3>Transitar</h3>
+            </div>
+            <p>A passagem intencional da BASE para a Juventude IBF ao completar 18 anos. Essa transição não é abrupta — é um processo cuidadoso.</p>
+            <div class="etapa-items">
+              <div class="etapa-item">A liderança da BASE comunica com antecedência ao pilar de Comunhão da Juventude</div>
+              <div class="etapa-item">Quesia e Daniel fazem o primeiro contato antes dos 18 anos</div>
+              <div class="etapa-item">O jovem é apresentado formalmente à Juventude — não apenas aparece um dia</div>
+              <div class="etapa-item">Os primeiros meses têm acompanhamento próximo e intencional</div>
+            </div>
+            <div class="etapa-sinal">
+              ✅ <div><strong>Sinal de avanço:</strong> O jovem sente o mesmo pertencimento na Juventude que sentia na BASE</div>
+            </div>
+            <div class="etapa-responsavel">Responsável: Alex e Belle passando o bastão para Quesia e Daniel</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CONTATO ── -->
+<section class="contato" id="contato">
+  <div class="container">
+    <p class="section-label">Próximo passo</p>
+    <h2 class="section-title">Venha fazer parte</h2>
+    <p class="section-desc">
+      Você não precisa ter tudo resolvido para chegar. Venha como você está — e vamos caminhar juntos.
+    </p>
+
+    <div class="contato-cards">
+      <div class="contato-card">
+        <div class="icon">📱</div>
+        <h4>Instagram</h4>
+        <p>@juventudefreguesiadailha</p>
+      </div>
+      <div class="contato-card">
+        <div class="icon">🌐</div>
+        <h4>Site</h4>
+        <p>www.batistafreguesia.com.br</p>
+      </div>
+      <div class="contato-card">
+        <div class="icon">📍</div>
+        <h4>Endereço</h4>
+        <p>Rua Magno Martins, 165<br>Freguesia da Ilha</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    <strong>Juventude IBF</strong> — Igreja Batista da Freguesia da Ilha do Governador<br>
+    Pescando uma nova geração para Cristo · Mateus 4:19
+  </p>
+</footer>
+
+<script>
+  function showTab(tab, btn) {
+    document.querySelectorAll('.jornada-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + tab).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Scroll reveal suave
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.etapa, .pilar-card, .contato-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
